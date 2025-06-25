@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# See https://packaging.python.org/tutorials/packaging-projects/
+
+# 1) update the version number in setup.cfg
+VERSION=0.1
+
+# 2) preparation
+python -m pip install --upgrade pip setuptools wheel twine
+
+# 3) create a distribution
+cd ..
+python -m build
+
+# 4) show the distribution
+ls dist/algomath-${VERSION}*
+
+# 5) upload the distribution
+#python -m twine upload --repository pypi dist/algomath-${VERSION}*
